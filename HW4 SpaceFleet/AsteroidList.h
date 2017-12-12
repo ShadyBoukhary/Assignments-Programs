@@ -1,5 +1,4 @@
-// header file for AsteroidList Class
-
+// Shady Boukhary
 #ifndef ASTEROIDLIST_H
 #define ASTEROIDLIST_H
 
@@ -18,7 +17,7 @@ public:
 	Asteroid getAst(int) const;
 
 	Asteroid& setAst(int);
-	
+	std::string to_string();
 
 private:
 	static const int MAX = 100;

@@ -2,6 +2,8 @@
 
 #include "AsteroidList.h"
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 
 /* Default Constructor*/
 AsteroidList::AsteroidList()
@@ -38,7 +40,7 @@ void AsteroidList::insert(const Asteroid& ast)
 		size++;
 	}
 	else
-		std::cout << "\n ERROR: CANNOT ADD TO A FULL LIST\n"; 
+		std::cout << "\n ERROR: CANNOT ADD TO A FULL LIST\n";
 }
 
 /* isFull()
@@ -78,7 +80,7 @@ int AsteroidList::getSize() const
 * gets an asteroid from the array
 * parameters: int
 * return: Asteroid					 */
-Asteroid& AsteroidList::setAst(int i) 
+Asteroid& AsteroidList::setAst(int i)
 {
 	return list[i];
 }
@@ -86,4 +88,17 @@ Asteroid& AsteroidList::setAst(int i)
 Asteroid AsteroidList::getAst(int i) const
 {
 	return list[i];
+}
+
+std::string AsteroidList::to_string()
+{
+	std::ostringstream s;
+	for (int x = 0; x < size; x++)
+	{
+		s << std::setw(4) << x << list[x].to_string();
+	}
+
+	s << std::endl << std::endl;
+	return s.str();
+
 }

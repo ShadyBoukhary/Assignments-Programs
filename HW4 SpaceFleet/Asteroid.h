@@ -1,5 +1,4 @@
-// header file for the asteroid class
-
+// Shady Boukhary
 #ifndef ASTEROID_H
 #define ASTEROID_H
 #include "SpaceObject.h"
@@ -20,6 +19,8 @@ public:
 	bool getVisited() const;
 	bool getPrecious() const;
 	double getSize() const;
+	std::string to_string();
+	void operator = (const Asteroid&);
 
 private:
 
